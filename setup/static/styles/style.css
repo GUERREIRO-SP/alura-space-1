@@ -94,7 +94,8 @@ table {
 
 .busca__fundo {
     align-items: center;
-    background-color: #041A37;
+    /* background-color: #041A37; */
+    background-color: yellow;
     border-radius: 8px;
     display: flex;
     margin: 0 auto;

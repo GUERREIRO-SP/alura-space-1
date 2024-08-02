@@ -1,8 +1,10 @@
 #     URL configuration for setup project.
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include       #include, método responsável por acessar as urls dos apps
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls), 
     path("", include("galeria.urls"))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
