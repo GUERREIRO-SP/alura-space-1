@@ -1,5 +1,7 @@
-from django.db import models
+# pylint: disable=missing-function-docstring, missing-module-docstring
 from datetime import datetime
+from django.db import models
+from django.contrib.auth.models import User
 
 # Cria a estrutura da tabela que contém informações das fotos...
 class Fotografia(models.Model):
@@ -22,6 +24,13 @@ class Fotografia(models.Model):
     foto = models.ImageField(upload_to="fotos/", blank = True)
     publicada = models.BooleanField(default = False)    # checkbox de publicação.
     data_cadastro = models.DateTimeField(default=datetime.now, blank = False)
+    usuario = models.ForeignKey(
+        to=User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=False,
+        related_name="user",
+    )
 
 def __str__(self):
     return f"Fotografia: [nome={self.nome}]"

@@ -21,7 +21,7 @@
                 <ul class="cards__lista">
                     {% if cards %}
                         {% for fotografia in cards %}
-                            <li class="card">
+                            <li class="card1">
                                 <a href="{% url 'imagem' fotografia.id %}">
                                     <!-- valida se existe a imagem -->
                                     {% if fotografia.foto == '' or fotografia.foto == null %}
