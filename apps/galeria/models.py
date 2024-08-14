@@ -22,7 +22,7 @@ class Fotografia(models.Model):
     # foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank = True)
     # será criada a pasta '/media/fotos/', no dir.principal, que conterá o upload das fotos
     foto = models.ImageField(upload_to="fotos/", blank = True)
-    publicada = models.BooleanField(default = False)    # checkbox de publicação.
+    publicada = models.BooleanField(default = True)    # checkbox de publicação.
     data_cadastro = models.DateTimeField(default=datetime.now, blank = False)
     usuario = models.ForeignKey(
         to=User,

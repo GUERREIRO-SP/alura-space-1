@@ -1,6 +1,6 @@
 # pylint: disable=missing-function-docstring, missing-module-docstring
 from django.urls import path
-from usuarios.views import login, cadastro, logout
+from apps.usuarios.views import login, cadastro, logout
 
 #.....Lista de endereços "rotas" do App galeria...
 urlpatterns = [

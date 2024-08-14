@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %} 
     <section class="galeria" style="margin-left: 5em">
-        <form action="{% url 'cadastro' %}" method="POST">
+        <form action="{% url 'editar_imagem' foto_id %}" method="POST" enctype="multipart/form-data">
             <!-- csrf_tokeh - Garante a segurança das informações que passamos pelo formulário.
                               Sempre deve ser colocado dentro da tag <form> -->
             {% csrf_token %}
@@ -12,15 +12,10 @@
                         <label for="{{ field.id_for_label }}" style="color:#D9D9D9; margin-bottom: 5px;">{{ field.label }}</label>
                         {{ field }}
                     </div>
-                    {% for error in field.errors %}
-                        <div class="alert alert-danger">
-                            {{ error }}
-                        </div>
-                    {% endfor %}
                 {% endfor %}
             </div>
             <div>
-                <button class="btn btn-success col-12" style="padding: top 5px;" type="sibmit"> Cadastrar</button>
+                <button type="submit" class="btn btn-success col-12" style="padding: top 5px;"> Salvar registro</button>
             </div>
         </form>
     </section>
